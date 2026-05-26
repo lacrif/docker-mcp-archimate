@@ -14,7 +14,7 @@ on:
         default: 'latest'
 
 jobs:
-  build-and-push:
+  push:
     runs-on: ubuntu-latest
 
     steps:
