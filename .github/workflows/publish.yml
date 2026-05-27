@@ -46,8 +46,8 @@ jobs:
           elif [ -n "${{ inputs.mcp_archimate_version }}" ]; then
             echo "value=${{ inputs.mcp_archimate_version }}" >> $GITHUB_OUTPUT
           else
-            LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null | sed 's/^v//' || echo "latest")
-            echo "value=${LATEST_TAG}" >> $GITHUB_OUTPUT
+            DOCKERFILE_VERSION=$(grep '^ARG MCP_ARCHIMATE_VERSION=' Dockerfile | cut -d= -f2)
+            echo "value=${DOCKERFILE_VERSION}" >> $GITHUB_OUTPUT
           fi
 
       - name: Set up QEMU
