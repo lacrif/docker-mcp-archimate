@@ -5,4 +5,4 @@ services:
       - "8000:8000"
     volumes:
       - ./config.json:/app/config.json:ro
-      - ./data:/app/data:ro
+      - ./data/archisurance.xml:/app/data/archisurance.xml:ro
